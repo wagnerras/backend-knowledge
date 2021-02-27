@@ -8,7 +8,7 @@ exports.up = function (knex, Promise) {
         table.binary('content').notNull()
         table.integer('userId').references('id')
             .inTable('users').notNull()
-        table.integer('categoriesId').references('id')
+        table.integer('categoryId').references('id')
             .inTable('categories').notNull()
     })
 };
