@@ -1,10 +1,11 @@
 module.exports = {
-    authSecret: '',
+    authSecret: 'hahsuad4545Wgdfg24545@isikfd',
+    mongo: 'mongodb://localhost/knowledge_stats',
     db: {
         host: '127.0.0.1',
         port: 5432,
-        database: '',
-        user: '',
-        password: ''
+        database: 'knowledge',
+        user: 'postgres',
+        password: 'admin'
     }
 }
