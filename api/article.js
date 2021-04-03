@@ -1,4 +1,5 @@
 const queries = require('./queries')
+const consultas = require('./repositorio')
 
 module.exports = app => {
     const { existsOrError } = app.api.validation
@@ -89,5 +90,21 @@ module.exports = app => {
             .catch(err => res.status(500).send(err))
     }
 
-    return { save, remove, get, getById, getByCategory }
+    const teste = async (req, res) => {
+        /*  await app.db.raw(queries.teste(4))
+             .then(artigos => res.json(artigos.rows))
+             .catch(err => res.status(500).send(err)) */
+
+        /* await app.db('articles')
+            .select('id', 'name')
+            .where({id: 4})
+            .then(artigos => res.json(artigos))
+            .catch(err => res.status(500).send(err)) */
+
+        await app.db.raw(consultas.getTeste(4))
+            .then(artigos => res.json(artigos.rows))
+            .catch(err => res.status(500).send(err))
+    }
+
+    return { save, remove, get, getById, getByCategory, teste }
 }
